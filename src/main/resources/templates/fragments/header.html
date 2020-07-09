@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout/">
+<head>
+    <meta charset="UTF-8">
+    <title>HelpDesk - Spring App</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
+        <a href="" class="navbar-brand">SISTEMA HELP DESK</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="/" class="nav-link">MENU</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">CADASTRAR</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">LISTAR</a>
+                </li>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<main>
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
+        <button type="button" class="navbar-toggler navbar-toggler-right" data-toggler="collapse" data-targe="navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="" class="navbar-brand">Helpdesk</a>
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="/users" class="nav-link">Usuários</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/roles" class="nav-link">Perfil</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</main>
+<script th:src="@{/js/jquery--3.5.1.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout">
+<head>
+    <meta charset="UTF-8">
+    <title>HelpDesk - Spring App</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+</head>
+<body>
+
+<header>
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
+        <a href="" class="navbar-brand">SISTEMA HELP DESK</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="" class="nav-link">MENU</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">CADASTRAR</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">LISTAR</a>
+                </li>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<main>
+    <div class="col-xs-12 col-md-12 text-center">
+        <h4>Edição de usuários</h4>
+        <form action="" th:action="@{/users/{id}(id = ${user.id})}" th:object="${user}" th:method="put">
+            <input type="hidden" name="_method" value="put" />
+            <input type="hidden" th:field="*{id}"/>
+            <div class="row">
+                <div class="form-group col-md-6 col-xs-12">
+                    <input type="text" th:field="*{name}" name="name" placeholder="Entrar com o nome:"
+                           class="form-control">
+                    <span class="text-danger" th:if="${#fields.hasErrors('name')}"
+                          th:errors="*{name}">User name error</span>
+                </div>
+                <div class="form-group col-md-6 col-xs-12">
+                    <input type="text" th:field="*{lastname}" name="lastname" placeholder="Entrar com o lastname:"
+                           class="form-control">
+                    <span class="text-danger" th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}">Lastname name error</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" th:field="*{email}" name="email" placeholder="Entrar com o email:"
+                       class="form-control">
+                <span class="text-danger" th:if="${#fields.hasErrors('email')}"
+                      th:errors="*{email}">Email name error</span>
+            </div>
+            <div class="form-group">
+                <input type="password" th:field="*{password}" name="password" placeholder="Entrar com o password:"
+                       class="form-control">
+                <span class="text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password name error</span>
+            </div>
+            <div class="form-group">
+                <label class="custom-control custom-checkbox">
+                    <input type="checkbox" th:field="*{active}" class="custom-control-input" />
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">Active?</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a href="/users" class="btn btn-secondary">Back</a>
+            </div>
+        </form>
+    </div>
+</main>
+<script th:src="@{/js/jquery--3.5.1.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+</body>
+</html>
